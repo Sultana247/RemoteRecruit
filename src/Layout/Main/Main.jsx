@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Main = () => {
     return (
-        <div className="flex flex-col md:flex-row min-h-screen gap-6">
+        <div className="flex flex-col md:flex-row min-h-screen gap-10">
             <Navbar></Navbar>
             <Outlet></Outlet>
           

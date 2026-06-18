@@ -118,19 +118,20 @@ const Navbar = () => {
 
 
             {/* desktop menu */}
-            <div className="hidden md:block bg-[#1E3E85] text-white pt-7 px-5 ">
+            <div className="hidden  bg-[#1E3E85]  text-white pt-7 px-5 md:flex md:flex-col ">
                 <div className='px-8 mb-5'>
                     <img src={logo} alt="Logo" className="w-38 h-auto" />
                 </div>
 
                 {/* menu with icon */}
-                <ul className="menu mb-15 w-56">
+                <ul className="menu  w-56">
                     {navitems}
 
 
                 </ul>
 
-                {/* why you should try premium */}
+                <div className=' mt-auto'>
+                    {/* why you should try premium */}
                 <div className=" w-[220px] mb-7 rounded-[12px] py-6 px-7 bg-linear-to-br from-[#4A8FDE] via-[#346CB8] to-[#234C8C] shadow-[0_20px_50px_rgba(0,0,0,0.45)] text-white">
                     <div className='relative -mt-12 ml-36 w-16 h-10'>
                         <img src={badge} alt="Premium Feature" className="" />
@@ -205,6 +206,7 @@ const Navbar = () => {
                     <div className='flex items-center ml-12 -mt-2'>
                         <LuChevronsUpDown className='text-[#E1E3F2CC] opacity-50 w-5 h-5'></LuChevronsUpDown>
                     </div>
+                </div>
                 </div>
             </div>
         </>
