@@ -1,6 +1,5 @@
 import { FaCheckSquare, FaEdit, FaRegEnvelope, FaUser } from 'react-icons/fa';
 import bungieJob from '../../assets/bungiejob.png'
-import work from '../../assets/Work.png'
 import Categories from '../../components/Categories';
 import { IoIosArrowDown } from 'react-icons/io';
 import Applicants from '../../components/Applicants';
@@ -10,19 +9,29 @@ import PremiumAccess from '../../components/PremiumAccess';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { GoSearch } from 'react-icons/go';
 import { Link } from 'react-router';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
+import ScrolltoTop from '../../Shared Component/ScrolltoTop';
 const Home = () => {
+     useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
     return (
         <div className="p-2 md:pl-20 md:pr-10 w-full bg-base-200">
             {/* back button */}
             <button className='mt-10 px-5 py-3 md:hidden flex gap-2 text-white bg-[#1E3E85] poppins-semibold text-[10px] rounded-[5px]'><FaArrowLeftLong></FaArrowLeftLong>Back</button>
-            <h3 className="text-2xl poppins-semibold font-medium mt-10">Welcome Bungie</h3>
-            <h1 className="poppins-semibold font-semibold text-5xl">Job Applicants</h1>
+            <h3 data-aos="fade-up" className="text-2xl poppins-semibold font-medium mt-10">Welcome Bungie</h3>
+            <h1 data-aos="fade-right" className="poppins-semibold font-semibold text-5xl">Job Applicants</h1>
 
 
             {/* your job post */}
             <div className="mt-3 py-5.75 bg-[#EDF6FABF] rounded-[14px] w-full flex justify-between items-center p-3 md:p-6">
                 <div className='inter-font flex gap-3 md:gap-8'>
-                    <img src={bungieJob} alt="Job Post" className="w-16 h-16" />
+                    <img src={bungieJob} alt="Job Post" className="w-16 h-16" loading='lazy'/>
                     <div>
                         <p className='font-medium text-[13px]'>Your Job Post</p>
                         <h4 className='font-semibold text-[12px] md:text-[18px] w-[200px] md:w-[330px]'>Senior UI/UX Designer needed for ongoing support</h4>
@@ -33,7 +42,7 @@ const Home = () => {
             </div>
 
             {/* key categories */}
-            <div className='mt-3'>
+            <div data-aos="slide-up" className='mt-3'>
                 <p className='text-[#1E3E85] manrope-font text-[12px] font-bold'>Key Categories:</p>
                 <Categories></Categories>
             </div>
@@ -56,7 +65,7 @@ const Home = () => {
 
                     </div>
                     {/* applicants info */}
-                    <div className='mt-8 '>
+                    <div data-aos="zoom-in" className='mt-8 '>
                         <Applicants></Applicants>
                     </div>
                     {/* pagination */}
@@ -72,6 +81,8 @@ const Home = () => {
                         </div>
                     </div>
 
+                    
+
                     {/* navbar items for mobile */}
                     <div className='block md:hidden mt-12 w-full'>
                         <div className='flex justify-center text-[#1E3E85]'>
@@ -83,6 +94,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* scroll to top button */}
+                <ScrolltoTop></ScrolltoTop>
                 {/* filter */}
                 <div className='hidden md:block w-1/4 rounded-3xl shadow-sm bg-white px-7 py-10'>
                     <h3 className='poppins-semibold text-[18px] text-[#11142D]'>Filter</h3>

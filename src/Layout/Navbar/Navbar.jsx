@@ -32,7 +32,7 @@ const Navbar = () => {
                     <a className='flex'>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                                <img src={work} alt="Work Icon" className="w-5 h-5" />
+                                <img src={work} alt="Work Icon" className="w-5 h-5" loading='lazy' />
                                 <span>Your Job Posts</span>
                             </div>
 
@@ -99,6 +99,7 @@ const Navbar = () => {
                         src={logoMb}
                         alt="Logo"
                         className="w-28 navbar-start"
+                        loading='lazy'
                     />
 
                     {/* Button */}
@@ -148,7 +149,7 @@ const Navbar = () => {
                     {/* why you should try premium */}
                     <div className=" w-[220px] mb-7 rounded-[12px] py-6 px-7 bg-linear-to-br from-[#4A8FDE] via-[#346CB8] to-[#234C8C] shadow-[0_20px_50px_rgba(0,0,0,0.45)] text-white">
                         <div className='relative -mt-12 ml-36 w-16 h-10'>
-                            <img src={badge} alt="Premium Feature" className="" />
+                            <img src={badge} alt="Premium Feature" className="" loading='lazy'/>
                         </div>
                         {/* Title */}
                         <h2 className="text-xl mb-3 poppins-semibold font-semibold text-center">Why you should try Premium</h2>
@@ -211,7 +212,8 @@ const Navbar = () => {
                         <div className="w-10 h-10 rounded-full">
                             <img
                                 alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                                loading='lazy' />
                         </div>
                         <div className='ml-3'>
                             <h3 className="font-bold text-sm text-[#FFFFFF]">Bungie</h3>

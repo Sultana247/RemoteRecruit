@@ -15,21 +15,21 @@ const Categories = () => {
                 </div>
             </div>
             <div className="bg-base-200 border border-[#979797] p-10 flex gap-3 rounded-[7px]">
-                <img src={invites} className='text-[#979797] w-10 h-10'/>
+                <img src={invites} className='text-[#979797] w-10 h-10' loading='lazy'/>
                 <div>
                     <h2 className='manrope-font text-[16px] font-bold'>Invites</h2>
                     <p className='manrope-font text-[13px] font-bold text-[#B2B3BD]'>50 Individuals</p>
                 </div>
             </div>
             <div className=" bg-base-200 border border-[#979797] p-10 flex gap-3 rounded-[7px]">
-                <img src={shortlist} className='text-[#979797] w-10 h-10'/>
+                <img src={shortlist} className='text-[#979797] w-10 h-10' loading='lazy'/>
                 <div>
                     <h2 className='manrope-font text-[16px] font-bold'>Shortlisted</h2>
                     <p className='manrope-font text-[13px] font-bold text-[#B2B3BD]'>+50 Individuals</p>
                 </div>
             </div>
             <div className=" bg-base-200 border border-[#979797] p-10 flex gap-3 rounded-[7px]">
-                <img src={reject} className='text-[#979797] w-10 h-10'/>
+                <img src={reject} className='text-[#979797] w-10 h-10' loading='lazy'/>
                 <div>
                     <h2 className='manrope-font text-[16px] font-bold'>New Applicants</h2>
                     <p className='manrope-font text-[13px] font-bold text-[#B2B3BD]'>+50 Individuals</p>

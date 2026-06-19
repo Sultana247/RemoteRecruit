@@ -11,9 +11,9 @@ function App() {
     <>
       <section id="center">
         <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+          <img src={heroImg} className="base" width="170" height="179" alt="" loading='lazy' />
+          <img src={reactLogo} className="framework" alt="React logo" loading='lazy' />
+          <img src={viteLogo} className="vite" alt="Vite logo" loading='lazy' />
         </div>
         <div>
           <h1>Get started</h1>
