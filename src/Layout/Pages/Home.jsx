@@ -1,13 +1,20 @@
-import { FaCheckSquare, FaCrown, FaEdit, FaQuestionCircle } from 'react-icons/fa';
+import { FaCheckSquare, FaEdit, FaRegEnvelope, FaUser } from 'react-icons/fa';
 import bungieJob from '../../assets/bungiejob.png'
+import work from '../../assets/Work.png'
 import Categories from '../../components/Categories';
 import { IoIosArrowDown } from 'react-icons/io';
 import Applicants from '../../components/Applicants';
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { IoClose } from 'react-icons/io5';
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight, MdWorkOutline } from 'react-icons/md';
+import { IoClose, IoSettingsOutline } from 'react-icons/io5';
+import PremiumAccess from '../../components/PremiumAccess';
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { GoSearch } from 'react-icons/go';
+import { Link } from 'react-router';
 const Home = () => {
     return (
-        <div className="pl-20 pr-10 w-full bg-base-200">
+        <div className="p-2 md:pl-20 md:pr-10 w-full bg-base-200">
+            {/* back button */}
+            <button className='mt-10 px-5 py-3 md:hidden flex gap-2 text-white bg-[#1E3E85] poppins-semibold text-[10px] rounded-[5px]'><FaArrowLeftLong></FaArrowLeftLong>Back</button>
             <h3 className="text-2xl poppins-semibold font-medium mt-10">Welcome Bungie</h3>
             <h1 className="poppins-semibold font-semibold text-5xl">Job Applicants</h1>
 
@@ -32,9 +39,9 @@ const Home = () => {
             </div>
 
 
-            <div className='flex gap-12  mt-5'>
+            <div className='flex md:gap-12  mt-5'>
                 {/* applications */}
-                <div className='w-3/4 rounded-xl shadow-sm bg-white px-7 py-5'>
+                <div className='w-full md:w-3/4 rounded-xl shadow-sm bg-white px-2 md:px-7 py-5'>
 
                     <div className='flex justify-between'>
                         <div className='flex justify-center items-center  inter-font text-[14px] gap-2'>
@@ -53,7 +60,7 @@ const Home = () => {
                         <Applicants></Applicants>
                     </div>
                     {/* pagination */}
-                    <div className='w-full'>
+                    <div className='w-full mt-25 md:mt-3'>
                         <div className="join gap-2 flex justify-center">
                             <button className="join-item btn rounded-[12px]"><MdOutlineKeyboardArrowLeft></MdOutlineKeyboardArrowLeft></button>
                             <button className="join-item btn rounded-[12px]">1</button>
@@ -64,12 +71,23 @@ const Home = () => {
                             <button className="join-item btn rounded-[12px]"><MdOutlineKeyboardArrowRight></MdOutlineKeyboardArrowRight></button>
                         </div>
                     </div>
+
+                    {/* navbar items for mobile */}
+                    <div className='block md:hidden mt-12 w-full'>
+                        <div className='flex justify-center text-[#1E3E85]'>
+                            <Link to={'/'}><button><GoSearch className='w-5 h-5 mr-8'></GoSearch></button></Link>
+                            <Link to={'/'}><button><MdWorkOutline className='w-5 h-5 mr-8 text-[#52B4DA]'></MdWorkOutline></button></Link>
+                            <Link to={'/'}><button><IoSettingsOutline className='w-5 h-5  mr-8'></IoSettingsOutline></button></Link>
+                            <Link to={'/'}><button><FaRegEnvelope className='w-5 h-5  mr-8'></FaRegEnvelope></button></Link>
+                            <Link to={'/'}><button><FaUser className='w-5 h-5  mr-8'></FaUser></button></Link>
+                        </div>
+                    </div>
                 </div>
                 {/* filter */}
-                <div className='w-1/4 rounded-3xl shadow-sm bg-white px-7 py-10'>
+                <div className='hidden md:block w-1/4 rounded-3xl shadow-sm bg-white px-7 py-10'>
                     <h3 className='poppins-semibold text-[18px] text-[#11142D]'>Filter</h3>
 
-                    <div className='flex justify-between mb-5 mt-2'>
+                    <div className='flex justify-between mb-5 mt-5'>
                         <p className='inter-font font-bold text-[14px]'>Pay:</p>
                         <IoIosArrowDown className='w-5 h-5'></IoIosArrowDown>
                     </div>
@@ -83,7 +101,7 @@ const Home = () => {
                     </div>
                     <p className='mt-2 text-[#B2B3BD]'>Max Hourly Rate</p>
                     {/* sort pay by */}
-                    <div className='mt-5'>
+                    <div className='mt-8'>
                         <p className='inter-font font-bold text-[14px]'>Sort Pay By:</p>
                         <div className='w-full bg-[#E4E4E4] mt-4 h-12 rounded-lg flex justify-end items-center p-5'>
                             <input className=''></input>
@@ -110,7 +128,7 @@ const Home = () => {
                             <p className='inter-font font-bold text-[14px]'>Sort Salary By:</p>
                             <IoIosArrowDown className='w-5 h-5'></IoIosArrowDown>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex flex-col lg:flex-row justify-between'>
                             <div className='flex gap-2'>
                                 <div className='border-2 border-[#E1E1E1] rounded-[4px] w-5 h-5'>
                                 </div>
@@ -143,86 +161,8 @@ const Home = () => {
                     </div>
 
                     {/* premium access */}
-                    
-                    <div className=" rounded-xl p-6">
-                        {/* Premium Text */}
-                        <h3 className="text-[#F4B400] text-[16px] font-medium">
-                            Upgrade to Premium to Access
-                        </h3>
 
-                        <div className="border-b border-gray-400 mt-2 mb-8"></div>
-
-                        {/* AI Ranking */}
-                        <div className="flex items-center justify-between mb-8">
-                            <div className="flex items-center gap-2">
-                                <span className="text-[#1E2139] font-semibold text-[18px]">
-                                    AI Ranking
-                                </span>
-                                <FaCrown className="text-[#F4B400] text-lg" />
-                            </div>
-
-                            {/* Toggle */}
-                            <label className="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" disabled className="sr-only peer" />
-                                <div className="w-12 h-7 bg-[#E8E8E8] rounded-full peer"></div>
-                                <div className="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow"></div>
-                            </label>
-                        </div>
-
-                        {/* English Proficiency */}
-                        <div className="mb-10">
-                            <h4 className="text-[#1E2139] font-bold text-[18px] mb-4">
-                                English Proficiency
-                            </h4>
-
-                            <div className="relative">
-                                <div className="h-2 rounded-full bg-[#D6DBE8]"></div>
-
-                                <div className="absolute top-0 left-0 h-2 w-[60%] rounded-full bg-[#5B74B7]"></div>
-
-                                <div className="absolute top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#5B74B7] rounded-full border-4 border-white shadow"></div>
-
-                                <span className="absolute -right-1 -top-2 text-[12px] font-semibold text-[#1E2139]">
-                                    100%
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Premium Button */}
-                        <button className="w-full bg-[#F8C524] hover:bg-[#F0BB10] text-[#1E2139] font-bold text-[18px] py-3 rounded-2xl mb-10 transition">
-                            Customize Ranking Filter
-                        </button>
-
-                        {/* Experience Match */}
-                        <div className="mb-16">
-                            <h4 className="text-[#1E2139] font-bold text-[18px] mb-4">
-                                Experience Match
-                            </h4>
-
-                            <div className="relative">
-                                <div className="h-2 rounded-full bg-[#D6DBE8]"></div>
-
-                                <div className="absolute top-0 left-0 h-2 w-[55%] rounded-full bg-[#5B74B7]"></div>
-
-                                <div className="absolute top-1/2 left-[55%] -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#5B74B7] rounded-full border-4 border-white shadow"></div>
-
-                                <span className="absolute -right-1 -top-2 text-[12px] font-semibold text-[#1E2139]">
-                                    100%
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Why AI Ranking */}
-                        <button className="flex items-center gap-2 text-[#F4B400] text-[16px] font-medium mb-16">
-                            Why Ai Ranking
-                            <FaQuestionCircle className="text-[#F4B400]" />
-                        </button>
-
-                        {/* Reset */}
-                        <button className="text-[#E53935] font-bold text-[18px]">
-                            Reset all filters
-                        </button>
-                    </div>
+                    <PremiumAccess></PremiumAccess>
                 </div>
             </div>
         </div>
